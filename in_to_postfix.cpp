@@ -14,7 +14,7 @@ std::string in_to_post(std::string str)
         t = in.pop();
         if (is_operator(t))
         {
-            while (is_pop_op(t,operat.peek()) && !operat.isEmpty())
+            while (is_pop_op(t, operat.peek()) && !operat.isEmpty())
             {
                 out.push(operat.pop());
             }
@@ -36,7 +36,7 @@ std::string in_to_post(std::string str)
             }
         }
     }
-    while (!operat.isEmpty())   
+    while (!operat.isEmpty())
     {
         out.push(operat.pop());
     }
@@ -84,7 +84,7 @@ static bool is_pop_op(std::string input_op, std::string operand_op)
 }
 int main(int argc, char const *argv[])
 {
-    std::cout<< in_to_post("2 + 5 ^ 3 ^ 4 * 7 / 8 ^ 9");
-    
+    std::cout << in_to_post("2 + 5 ^ 3 ^ 4 * 7 / 8 ^ 9");
+
     return 0;
 }
