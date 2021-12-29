@@ -56,7 +56,7 @@ public:
         else
         {
             std::cout << "stack is empty\n";
-            return "";
+            return "..";
         }
     }
     std::string peek()
@@ -68,7 +68,7 @@ public:
         else
         {
             std::cout << "stack is empty\n";
-            return "";
+            return "..";
         }
     }
     bool isEmpty()

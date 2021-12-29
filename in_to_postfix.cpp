@@ -14,7 +14,7 @@ std::string in_to_post(std::string str)
         t = in.pop();
         if (is_operator(t))
         {
-            while (is_pop_op(t, operat.peek()) && !operat.isEmpty())
+            while (!operat.isEmpty() && is_pop_op(t, operat.peek()))
             {
                 out.push(operat.pop());
             }
