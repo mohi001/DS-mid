@@ -1,9 +1,8 @@
-#include<string>
-#include"Stack.cpp"
-bool is_infix(std::string in);
-bool checkparentheses(std::string in);
+#include"header.hpp"
+static bool checkparentheses(std::string in);
+static bool is_p(char s);
 static bool is_operator(std::string str);
-bool is_p(char s);
+
 bool is_infix(std::string in)
 {
     if (!checkparentheses(in))
@@ -35,7 +34,7 @@ bool is_infix(std::string in)
     }
     return true;
 }
-bool is_p(char s)
+static bool is_p(char s)
 {
     return (s == '(' || s == ')');
 }
@@ -43,7 +42,7 @@ static bool is_operator(std::string str)
 {
     return str == "+" || str == "-" || str == "/" || str == "*" || str == "^";
 }
-bool checkparentheses(std::string in)
+static bool checkparentheses(std::string in)
 {
     Stack st(in);
     Stack p;
@@ -69,9 +68,9 @@ bool checkparentheses(std::string in)
     }
     return false;
 }
-int main(int argc, char const *argv[])
-{
+// int main(int argc, char const *argv[])
+// {
 
-    std::cout << is_infix("( ( ( 1  +  ( 25  + + 6 ) ) ) )");
-    return 0;
-}
+//     std::cout << is_infix("( ( ( 1  +  ( 25  + + 6 ) ) ) )");
+//     return 0;
+// }

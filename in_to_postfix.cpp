@@ -1,5 +1,5 @@
-#include <string>
-#include "Stack.cpp"
+#include "header.hpp"
+
 static bool is_operator(std::string str);
 static bool is_pop_op(std::string input_op, std::string operand_op);
 
@@ -29,6 +29,10 @@ std::string in_to_post(std::string str)
                     out.push(operat.pop());
                 }
                 operat.pop();
+            }
+            else if (t == "(")
+            {
+                operat.push(t);
             }
             else
             {
@@ -82,9 +86,9 @@ static bool is_pop_op(std::string input_op, std::string operand_op)
     }
     return false;
 }
-int main(int argc, char const *argv[])
-{
-    std::cout << in_to_post("2 + 5 ^ 3 ^ 4 * 7 / 8 ^ 9");
+// int main(int argc, char const *argv[])
+// {
+//     std::cout << in_to_post("(  A + B ) * ( C - D )");
 
-    return 0;
-}
+//     return 0;
+// }

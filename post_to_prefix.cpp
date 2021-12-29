@@ -26,8 +26,8 @@ static bool is_operator(std::string str)
 {
     return str == "+" || str == "-" || str == "/" || str == "*" || str == "^";
 }
-int main(int argc, char const *argv[])
-{
-    std::cout << post_to_pre("a b + c - d e f ^ ^ * g /");
-    return 0;
-}
+// int main(int argc, char const *argv[])
+// {
+//     std::cout << post_to_pre("a b + c - d e f ^ ^ * g /");
+//     return 0;
+// }

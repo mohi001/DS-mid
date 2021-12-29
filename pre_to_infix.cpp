@@ -1,5 +1,4 @@
 #include <string>
-#include <iostream>
 #include "Stack.cpp"
 
 static bool is_operator(std::string str);
@@ -30,9 +29,9 @@ static bool is_operator(std::string str)
 {
     return str == "+" || str == "-" || str == "/" || str == "*" || str == "^";
 }
-int main(int argc, char const *argv[])
-{
-    std::cout << pre_to_in("* +  A B - C D");
+// int main(int argc, char const *argv[])
+// {
+//     std::cout << pre_to_in("* +  A B - C D");
 
-    return 0;
-}
+//     return 0;
+// }
