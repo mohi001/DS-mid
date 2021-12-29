@@ -32,13 +32,8 @@ public:
         }
         if (tmp != "")
             push(tmp);
-        //revese stack
-        for (size_t i = 0; i < m_size / 2; i++)
-        {
-            tmp = arr[i];
-            arr[i] = arr[m_size - 1 - i];
-            arr[m_size - 1 - i] = tmp;
-        }
+        //reverse stack
+        reverse();
     }
     bool push(std::string x)
     {
@@ -83,6 +78,16 @@ public:
     unsigned int size()
     {
         return m_size;
+    }
+    void reverse()
+    {
+        std::string tmp;
+        for (size_t i = 0; i < m_size / 2; i++)
+        {
+            tmp = arr[i];
+            arr[i] = arr[m_size - 1 - i];
+            arr[m_size - 1 - i] = tmp;
+        }
     }
     void printall()
     {
