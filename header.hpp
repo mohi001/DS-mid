@@ -12,4 +12,5 @@ bool is_infix(std::string in);
 bool is_postfix(std::string post);
 bool is_prefix(std::string pre);
 #include "Stack.cpp"
+#include "fix_to_fix.cpp"
 #endif
