@@ -47,6 +47,16 @@ bool is_infix(std::string in)
     }
     return true;
 }
+bool is_postfix(std::string post)
+{
+    std::string in = post_to_in(post);
+    return is_infix(in);
+}
+bool is_prefix(std::string pre)
+{
+    std::string in = pre_to_in(pre);
+    return is_infix(in);
+}
 static bool is_p(char s)
 {
     return (s == '(' || s == ')');

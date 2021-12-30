@@ -9,5 +9,7 @@ std::string pre_to_post(std::string pre);
 std::string post_to_pre(std::string str);
 std::string pre_to_in(std::string str);
 bool is_infix(std::string in);
+bool is_postfix(std::string post);
+bool is_prefix(std::string pre);
 #include "Stack.cpp"
 #endif

@@ -3,7 +3,7 @@ int main(int argc, char const *argv[])
 {
     std::string input = "";
     std::string exp = "";
-    std::cout<<(is_infix(post_to_in("a b + +")));
+    std::cout << (is_infix(post_to_in("a b + +")));
     bool d = false;
     while (1 && d)
     {
@@ -26,28 +26,71 @@ int main(int argc, char const *argv[])
         switch (a)
         {
         case 1:
-            std::cout << in_to_post(exp);
-            std::cout << "\n";
+            if (is_infix(exp))
+            {
+                std::cout << in_to_post(exp);
+                std::cout << "\n";
+            }
+            else
+            {
+                std::cout << "invalid expresion\n";
+            }
             break;
+
         case 2:
-            std::cout << in_to_pre(exp);
-            std::cout << "\n";
+            if (is_infix(exp))
+            {
+                std::cout << in_to_pre(exp);
+                std::cout << "\n";
+            }
+            else
+            {
+                std::cout << "invalid expresion\n";
+            }
             break;
         case 3:
-            post_to_in(exp);
-            std::cout << "\n";
+            if (is_postfix(exp))
+            {
+                post_to_in(exp);
+                std::cout << "\n";
+            }
+            else
+            {
+                std::cout << "invalid expresion\n";
+            }
             break;
         case 4:
-            post_to_pre(exp);
-            std::cout << "\n";
+            if (is_postfix(exp))
+            {
+                post_to_pre(exp);
+                std::cout << "\n";
+            }
+            else
+            {
+                std::cout << "invalid expresion\n";
+            }
             break;
         case 5:
-            pre_to_in(exp);
-            std::cout << "\n";
+            if (is_prefix(exp))
+            {
+                pre_to_in(exp);
+                std::cout << "\n";
+            }
+            else
+            {
+                std::cout << "invalid expresion\n";
+            }
             break;
         case 6:
-            pre_to_post(exp);
-            std::cout << "\n";
+            if (is_prefix(exp))
+            {
+                pre_to_post(exp);
+                std::cout << "\n";
+            }
+            else
+            {
+                std::cout << "invalid expresion\n";
+            }
             break;
 
         default:
