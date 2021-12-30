@@ -2,6 +2,8 @@
 #include <iostream>
 #include "Stack.cpp"
 static bool is_operator(std::string str);
+static void log(Stack &in, Stack &out);
+
 std::string post_to_pre(std::string str)
 {
     std::cout << "postfix to pretfix: " << str << "\n";

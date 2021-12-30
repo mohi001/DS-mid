@@ -1,7 +1,8 @@
 #include <string>
 #include "Stack.cpp"
-
 static bool is_operator(std::string str);
+static void log(Stack &in, Stack &out);
+
 std::string pre_to_in(std::string str)
 {
     std::cout << "prefix to infix: " << str << "\n";
