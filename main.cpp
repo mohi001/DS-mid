@@ -3,6 +3,7 @@ void show_history(fix_to_fix *fixes);
 void back_to_menu();
 int main(int argc, char const *argv[])
 {
+    std::cout << "welcome";
     std::string input = "";
     std::string exp = "";
     std::string str = "";
@@ -17,7 +18,7 @@ int main(int argc, char const *argv[])
                            post_in, post_pre, pre_in, pre_post};
     while (1 && d)
     {
-        std::cout << "welcome,please chose a numebr\nor enter q to exit\n";
+        std::cout << "please chose a numebr\nor enter q to exit\n";
         std::cout << "1: infix to postfix\n";
         std::cout << "2: infix to prefix\n";
         std::cout << "3: postfix to infix\n";
@@ -43,12 +44,12 @@ int main(int argc, char const *argv[])
                 std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[0].update();
-                back_to_menu();
             }
             else
             {
                 std::cout << "\033[1;31minvalid expresion\033[0m\n";
             }
+            back_to_menu();
             break;
 
         case 2:
@@ -59,12 +60,12 @@ int main(int argc, char const *argv[])
                 std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[1].update();
-                back_to_menu();
             }
             else
             {
                 std::cout << "\033[1;31minvalid expresion\033[0m\n";
             }
+            back_to_menu();
             break;
         case 3:
             std::getline(std::cin, exp);
@@ -74,12 +75,12 @@ int main(int argc, char const *argv[])
                 std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[2].update();
-                back_to_menu();
             }
             else
             {
                 std::cout << "\033[1;31minvalid expresion\033[0m\n";
             }
+            back_to_menu();
             break;
         case 4:
             std::getline(std::cin, exp);
@@ -89,12 +90,12 @@ int main(int argc, char const *argv[])
                 std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[3].update();
-                back_to_menu();
             }
             else
             {
                 std::cout << "\033[1;31minvalid expresion\033[0m\n";
             }
+            back_to_menu();
             break;
         case 5:
             std::getline(std::cin, exp);
@@ -104,12 +105,12 @@ int main(int argc, char const *argv[])
                 std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[4].update();
-                back_to_menu();
             }
             else
             {
                 std::cout << "\033[1;31minvalid expresion\033[0m\n";
             }
+            back_to_menu();
             break;
         case 6:
             std::getline(std::cin, exp);
@@ -119,12 +120,12 @@ int main(int argc, char const *argv[])
                 std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[5].update();
-                back_to_menu();
             }
             else
             {
                 std::cout << "\033[1;31minvalid expresion\033[0m\n";
             }
+            back_to_menu();
             break;
         case 7:
             show_history(fixes);
@@ -174,7 +175,7 @@ void show_history(fix_to_fix *fixes)
 }
 void back_to_menu()
 {
-    std::cout << "enter any button to back to menu\n";
+    std::cout << "press enter to back to menu\n";
     std::getchar();
     std::system("clear");
 }
