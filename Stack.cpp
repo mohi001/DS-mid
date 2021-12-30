@@ -89,12 +89,15 @@ public:
             arr[m_size - 1 - i] = tmp;
         }
     }
-    void printall()
+    void print()
     {
+        std::string tmp = "[ ";
         for (size_t i = 0; i < m_size; i++)
         {
-            std::cout << i << ":" << arr[i] << "\n";
+            tmp += arr[i] + ", ";
         }
+        tmp += "]\n";
+        std::cout << tmp;
     }
     std::string to_sring()
     {

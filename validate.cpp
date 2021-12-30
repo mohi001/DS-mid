@@ -91,9 +91,3 @@ static bool checkparentheses(std::string in)
     }
     return false;
 }
-// int main(int argc, char const *argv[])
-// {
-
-//     std::cout << is_infix("( ( ( 1  +  ( 25  + + 6 ) ) ) )");
-//     return 0;
-// }

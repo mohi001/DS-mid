@@ -2,9 +2,11 @@
 
 static bool is_operator(std::string str);
 static bool is_pop_op(std::string input_op, std::string operand_op);
+static void log(Stack &in, Stack &op, Stack &out);
 
 std::string in_to_post(std::string str)
 {
+    std::cout << "infix to postfix: " << str << "\n";
     Stack in(str);
     Stack out;
     Stack operat;
@@ -17,6 +19,7 @@ std::string in_to_post(std::string str)
             while (!operat.isEmpty() && is_pop_op(t, operat.peek()))
             {
                 out.push(operat.pop());
+                log(in, operat, out);
             }
             operat.push(t);
         }
@@ -27,6 +30,7 @@ std::string in_to_post(std::string str)
                 while (operat.peek() != "(")
                 {
                     out.push(operat.pop());
+                    log(in, operat, out);
                 }
                 operat.pop();
             }
@@ -39,12 +43,23 @@ std::string in_to_post(std::string str)
                 out.push(t);
             }
         }
+        log(in, operat, out);
     }
     while (!operat.isEmpty())
     {
         out.push(operat.pop());
+        log(in, operat, out);
     }
     return out.to_sring();
+}
+static void log(Stack &in, Stack &op, Stack &out)
+{
+    std::cout << "input stack:\n";
+    in.print();
+    std::cout << "operator stack:\n";
+    op.print();
+    std::cout << "output stack:\n";
+    out.print();
 }
 static bool is_operator(std::string str)
 {
@@ -86,9 +101,3 @@ static bool is_pop_op(std::string input_op, std::string operand_op)
     }
     return false;
 }
-// int main(int argc, char const *argv[])
-// {
-//     std::cout << in_to_post("(  A + B ) * ( C - D )");
-
-//     return 0;
-// }
