@@ -2,11 +2,14 @@
 
 static bool is_operator(std::string str);
 static bool is_pop_op(std::string input_op, std::string operand_op);
-static void log(Stack &in, Stack &op, Stack &out);
+static void log(Stack &in, Stack &op, Stack &out, bool l);
 
-std::string in_to_post(std::string str)
+std::string in_to_post(std::string str, bool l)
 {
-    std::cout << "infix to postfix: " << str << "\n";
+    if (l)
+    {
+        std::cout << "infix to postfix: " << str << "\n";
+    }
     Stack in(str);
     Stack out;
     Stack operat;
@@ -19,7 +22,7 @@ std::string in_to_post(std::string str)
             while (!operat.isEmpty() && is_pop_op(t, operat.peek()))
             {
                 out.push(operat.pop());
-                log(in, operat, out);
+                log(in, operat, out, l);
             }
             operat.push(t);
         }
@@ -30,7 +33,7 @@ std::string in_to_post(std::string str)
                 while (operat.peek() != "(")
                 {
                     out.push(operat.pop());
-                    log(in, operat, out);
+                    log(in, operat, out, l);
                 }
                 operat.pop();
             }
@@ -43,23 +46,26 @@ std::string in_to_post(std::string str)
                 out.push(t);
             }
         }
-        log(in, operat, out);
+        log(in, operat, out, l);
     }
     while (!operat.isEmpty())
     {
         out.push(operat.pop());
-        log(in, operat, out);
+        log(in, operat, out, l);
     }
     return out.to_sring();
 }
-static void log(Stack &in, Stack &op, Stack &out)
+static void log(Stack &in, Stack &op, Stack &out, bool l)
 {
-    std::cout << "input stack:\n";
-    in.print();
-    std::cout << "operator stack:\n";
-    op.print();
-    std::cout << "output stack:\n";
-    out.print();
+    if (l)
+    {
+        std::cout << "input stack:\n";
+        in.print();
+        std::cout << "operator stack:\n";
+        op.print();
+        std::cout << "output stack:\n";
+        out.print();
+    }
 }
 static bool is_operator(std::string str)
 {

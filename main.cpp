@@ -4,7 +4,7 @@ int main(int argc, char const *argv[])
 {
     std::string input = "";
     std::string exp = "";
-    std::cout << (is_infix(post_to_in("a b + +")));
+    std::cout << is_infix(post_to_in("a b + ",false));
     bool d = false;
     fix_to_fix in_post("infix to postfix");
     fix_to_fix in_pre("infix to prefix");
@@ -38,74 +38,74 @@ int main(int argc, char const *argv[])
         case 1:
             if (is_infix(exp))
             {
-                std::cout << in_to_post(exp);
+                std::cout << in_to_post(exp,true);
                 std::cout << "\n";
                 fixes[0].update();
             }
             else
             {
-                std::cout << "invalid expresion\n";
+                std::cout << "\033[1;31minvalid expresion\033[0m\n";
             }
             break;
 
         case 2:
             if (is_infix(exp))
             {
-                std::cout << in_to_pre(exp);
+                std::cout << in_to_pre(exp,true);
                 std::cout << "\n";
                 fixes[1].update();
             }
             else
             {
-                std::cout << "invalid expresion\n";
+                std::cout << "\033[1;31minvalid expresion\033[0m\n";
             }
             break;
         case 3:
             if (is_postfix(exp))
             {
-                post_to_in(exp);
+                post_to_in(exp,true);
                 std::cout << "\n";
                 fixes[2].update();
             }
             else
             {
-                std::cout << "invalid expresion\n";
+                std::cout << "\033[1;31minvalid expresion\033[0m\n";
             }
             break;
         case 4:
             if (is_postfix(exp))
             {
-                post_to_pre(exp);
+                post_to_pre(exp,true);
                 std::cout << "\n";
                 fixes[3].update();
             }
             else
             {
-                std::cout << "invalid expresion\n";
+                std::cout << "\033[1;31minvalid expresion\033[0m\n";
             }
             break;
         case 5:
             if (is_prefix(exp))
             {
-                pre_to_in(exp);
+                pre_to_in(exp,true);
                 std::cout << "\n";
                 fixes[4].update();
             }
             else
             {
-                std::cout << "invalid expresion\n";
+                std::cout << "\033[1;31minvalid expresion\033[0m\n";
             }
             break;
         case 6:
             if (is_prefix(exp))
             {
-                pre_to_post(exp);
+                pre_to_post(exp,true);
                 std::cout << "\n";
                 fixes[5].update();
             }
             else
             {
-                std::cout << "invalid expresion\n";
+                std::cout << "\033[1;31minvalid expresion\033[0m\n";
             }
             break;
         case 7:

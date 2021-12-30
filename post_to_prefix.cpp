@@ -2,11 +2,14 @@
 #include <iostream>
 #include "Stack.cpp"
 static bool is_operator(std::string str);
-static void log(Stack &in, Stack &out);
+static void log(Stack &in, Stack &out, bool l);
 
-std::string post_to_pre(std::string str)
+std::string post_to_pre(std::string str, bool l)
 {
-    std::cout << "postfix to pretfix: " << str << "\n";
+    if (l)
+    {
+        std::cout << "postfix to pretfix: " << str << "\n";
+    }
     Stack in(str);
     Stack out;
     std::string t;
@@ -22,7 +25,7 @@ std::string post_to_pre(std::string str)
         {
             out.push(t);
         }
-        log(in, out);
+        log(in, out, l);
     }
     return out.to_sring();
 }
@@ -30,10 +33,13 @@ static bool is_operator(std::string str)
 {
     return str == "+" || str == "-" || str == "/" || str == "*" || str == "^";
 }
-static void log(Stack &in, Stack &out)
+static void log(Stack &in, Stack &out, bool l)
 {
-    std::cout << "input stack:\n";
-    in.print();
-    std::cout << "output stack:\n";
-    out.print();
+    if (l)
+    {
+        std::cout << "input stack:\n";
+        in.print();
+        std::cout << "output stack:\n";
+        out.print();
+    }
 }

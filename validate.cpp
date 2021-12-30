@@ -49,12 +49,12 @@ bool is_infix(std::string in)
 }
 bool is_postfix(std::string post)
 {
-    std::string in = post_to_in(post);
+    std::string in = post_to_in(post, false);
     return is_infix(in);
 }
 bool is_prefix(std::string pre)
 {
-    std::string in = pre_to_in(pre);
+    std::string in = pre_to_in(pre, false);
     return is_infix(in);
 }
 static bool is_p(char s)

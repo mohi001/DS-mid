@@ -55,7 +55,7 @@ public:
         }
         else
         {
-            std::cout << "stack is empty\n";
+            // std::cout << "stack is empty\n";
             return "..";
         }
     }
@@ -67,7 +67,7 @@ public:
         }
         else
         {
-            std::cout << "stack is empty\n";
+            // std::cout << "stack is empty\n";
             return "..";
         }
     }
