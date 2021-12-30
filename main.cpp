@@ -4,8 +4,9 @@ int main(int argc, char const *argv[])
 {
     std::string input = "";
     std::string exp = "";
-    std::cout << is_infix(post_to_in("a b + ",false));
-    bool d = false;
+    std::string str = "";
+    std::cout << is_infix(post_to_in("a b + ", false));
+    bool d = true;
     fix_to_fix in_post("infix to postfix");
     fix_to_fix in_pre("infix to prefix");
     fix_to_fix post_in("postfix to infix");
@@ -32,13 +33,14 @@ int main(int argc, char const *argv[])
         int a = std::stoi(input);
         std::cout << "please inter your expresion:\n";
 
-        std::getline(std::cin, exp);
         switch (a)
         {
         case 1:
+            std::getline(std::cin, exp);
             if (is_infix(exp))
             {
-                std::cout << in_to_post(exp,true);
+                str = in_to_post(exp, true);
+                std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[0].update();
             }
@@ -49,9 +51,11 @@ int main(int argc, char const *argv[])
             break;
 
         case 2:
+            std::getline(std::cin, exp);
             if (is_infix(exp))
             {
-                std::cout << in_to_pre(exp,true);
+                str = in_to_pre(exp, true);
+                std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[1].update();
             }
@@ -61,9 +65,11 @@ int main(int argc, char const *argv[])
             }
             break;
         case 3:
+            std::getline(std::cin, exp);
             if (is_postfix(exp))
             {
-                post_to_in(exp,true);
+                str = post_to_in(exp, true);
+                std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[2].update();
             }
@@ -73,9 +79,11 @@ int main(int argc, char const *argv[])
             }
             break;
         case 4:
+            std::getline(std::cin, exp);
             if (is_postfix(exp))
             {
-                post_to_pre(exp,true);
+                str = post_to_pre(exp, true);
+                std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[3].update();
             }
@@ -85,9 +93,11 @@ int main(int argc, char const *argv[])
             }
             break;
         case 5:
+            std::getline(std::cin, exp);
             if (is_prefix(exp))
             {
-                pre_to_in(exp,true);
+                str = pre_to_in(exp, true);
+                std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[4].update();
             }
@@ -97,9 +107,11 @@ int main(int argc, char const *argv[])
             }
             break;
         case 6:
+            std::getline(std::cin, exp);
             if (is_prefix(exp))
             {
-                pre_to_post(exp,true);
+                str = pre_to_post(exp, true);
+                std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[5].update();
             }
@@ -110,6 +122,7 @@ int main(int argc, char const *argv[])
             break;
         case 7:
             show_history(fixes);
+            break;
 
         default:
             std::cout << "invalid";
