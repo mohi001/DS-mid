@@ -1,11 +1,11 @@
 #include "header.hpp"
 void show_history(fix_to_fix *fixes);
+void back_to_menu();
 int main(int argc, char const *argv[])
 {
     std::string input = "";
     std::string exp = "";
     std::string str = "";
-    std::cout << is_infix(post_to_in("a b + ", false));
     bool d = true;
     fix_to_fix in_post("infix to postfix");
     fix_to_fix in_pre("infix to prefix");
@@ -43,6 +43,7 @@ int main(int argc, char const *argv[])
                 std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[0].update();
+                back_to_menu();
             }
             else
             {
@@ -58,6 +59,7 @@ int main(int argc, char const *argv[])
                 std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[1].update();
+                back_to_menu();
             }
             else
             {
@@ -72,6 +74,7 @@ int main(int argc, char const *argv[])
                 std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[2].update();
+                back_to_menu();
             }
             else
             {
@@ -86,6 +89,7 @@ int main(int argc, char const *argv[])
                 std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[3].update();
+                back_to_menu();
             }
             else
             {
@@ -100,6 +104,7 @@ int main(int argc, char const *argv[])
                 std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[4].update();
+                back_to_menu();
             }
             else
             {
@@ -114,6 +119,7 @@ int main(int argc, char const *argv[])
                 std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[5].update();
+                back_to_menu();
             }
             else
             {
@@ -122,6 +128,7 @@ int main(int argc, char const *argv[])
             break;
         case 7:
             show_history(fixes);
+            back_to_menu();
             break;
 
         default:
@@ -164,4 +171,10 @@ void show_history(fix_to_fix *fixes)
     {
         fixes[i].print();
     }
+}
+void back_to_menu()
+{
+    std::cout << "enter any button to back to menu\n";
+    std::getchar();
+    std::system("clear");
 }
