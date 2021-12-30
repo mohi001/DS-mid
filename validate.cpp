@@ -1,4 +1,4 @@
-#include"header.hpp"
+#include "header.hpp"
 static bool checkparentheses(std::string in);
 static bool is_p(char s);
 static bool is_operator(std::string str);
@@ -22,15 +22,28 @@ bool is_infix(std::string in)
     {
         return false;
     }
+    if (t == "..")
+    {
+        return false;
+    }
     bool op = true;
     while (!st.isEmpty())
     {
         t = st.pop();
+        if (t == "..")
+        {
+            return false;
+        }
+
         if (is_operator(t) != op)
         {
             return false;
         }
         op = !op;
+    }
+    if (is_operator(t))
+    {
+        return false;
     }
     return true;
 }

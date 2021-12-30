@@ -3,7 +3,9 @@ int main(int argc, char const *argv[])
 {
     std::string input = "";
     std::string exp = "";
-    while (1)
+    std::cout<<(is_infix(post_to_in("a b + +")));
+    bool d = false;
+    while (1 && d)
     {
         std::cout << "welcome,please chose a numebr\nor enter q to exit\n";
         std::cout << "1: infix to postfix\n";
