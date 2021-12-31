@@ -53,7 +53,7 @@ std::string in_to_post(std::string str, bool l)
         out.push(operat.pop());
         log(in, operat, out, l);
     }
-    return out.to_sring();
+    return out.to_string();
 }
 static void log(Stack &in, Stack &op, Stack &out, bool l)
 {

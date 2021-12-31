@@ -28,7 +28,7 @@ std::string pre_to_in(std::string str, bool l)
         }
         log(in, out, l);
     }
-    return out.to_sring();
+    return out.to_string();
 }
 static bool is_operator(std::string str)
 {

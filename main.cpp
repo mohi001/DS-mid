@@ -1,5 +1,4 @@
 #include "header.hpp"
-void show_history(fix_to_fix *fixes);
 void back_to_menu();
 int main(int argc, char const *argv[])
 {
@@ -128,7 +127,18 @@ int main(int argc, char const *argv[])
             back_to_menu();
             break;
         case 7:
-            show_history(fixes);
+            std::cout << "1: increasingly\n";
+            std::cout << "2: decreasingly\n";
+            std::getline(std::cin, input);
+            a = std::stoi(input);
+            if (a == 1)
+            {
+                fix_to_fix::show_history_inc(fixes);
+            }
+            else
+            {
+                fix_to_fix::show_history_dec(fixes);
+            }
             back_to_menu();
             break;
 
@@ -141,41 +151,9 @@ int main(int argc, char const *argv[])
     }
     return 0;
 }
-void show_history(fix_to_fix *fixes)
-{
-    fix_to_fix tmp("");
-    for (size_t i = 0; i < 5; i++)
-    {
-        for (size_t i = 0; i < 5; i++)
-        {
-            if (fixes[i].get_time() > fixes[i + 1].get_time())
-            {
-                tmp = fixes[i];
-                fixes[i] = fixes[i + 1];
-                fixes[i + 1] = tmp;
-            }
-        }
-    }
-    for (size_t i = 0; i < 5; i++)
-    {
-        for (size_t i = 0; i < 5; i++)
-        {
-            if (fixes[i].get_count() < fixes[i + 1].get_count())
-            {
-                tmp = fixes[i];
-                fixes[i] = fixes[i + 1];
-                fixes[i + 1] = tmp;
-            }
-        }
-    }
-    for (size_t i = 0; i < 6; i++)
-    {
-        fixes[i].print();
-    }
-}
 void back_to_menu()
 {
-    std::cout << "press enter to back to menu\n";
+    std::cout << "press enter to back to menu";
     std::getchar();
     std::system("clear");
 }

@@ -99,7 +99,7 @@ public:
         tmp += "]\n";
         std::cout << tmp;
     }
-    std::string to_sring()
+    std::string to_string()
     {
         std::string tmp;
 

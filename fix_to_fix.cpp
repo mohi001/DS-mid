@@ -32,4 +32,68 @@ public:
     {
         std::cout << m_name << " : " << count << "\n";
     }
+    static void show_history_inc(fix_to_fix *fixes)
+    {
+        fix_to_fix tmp("");
+        for (size_t i = 0; i < 5; i++)
+        {
+            for (size_t i = 0; i < 5; i++)
+            {
+                if (fixes[i].get_time() > fixes[i + 1].get_time())
+                {
+                    tmp = fixes[i];
+                    fixes[i] = fixes[i + 1];
+                    fixes[i + 1] = tmp;
+                }
+            }
+        }
+        for (size_t i = 0; i < 5; i++)
+        {
+            for (size_t i = 0; i < 5; i++)
+            {
+                if (fixes[i].get_count() < fixes[i + 1].get_count())
+                {
+                    tmp = fixes[i];
+                    fixes[i] = fixes[i + 1];
+                    fixes[i + 1] = tmp;
+                }
+            }
+        }
+        for (size_t i = 0; i < 6; i++)
+        {
+            fixes[i].print();
+        }
+    }
+    static void show_history_dec(fix_to_fix *fixes)
+    {
+        fix_to_fix tmp("");
+        for (size_t i = 0; i < 5; i++)
+        {
+            for (size_t i = 0; i < 5; i++)
+            {
+                if (fixes[i].get_time() < fixes[i + 1].get_time())
+                {
+                    tmp = fixes[i];
+                    fixes[i] = fixes[i + 1];
+                    fixes[i + 1] = tmp;
+                }
+            }
+        }
+        for (size_t i = 0; i < 5; i++)
+        {
+            for (size_t i = 0; i < 5; i++)
+            {
+                if (fixes[i].get_count() > fixes[i + 1].get_count())
+                {
+                    tmp = fixes[i];
+                    fixes[i] = fixes[i + 1];
+                    fixes[i + 1] = tmp;
+                }
+            }
+        }
+        for (size_t i = 0; i < 6; i++)
+        {
+            fixes[i].print();
+        }
+    }
 };

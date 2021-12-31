@@ -1,2 +1,2 @@
 # DS-mid
-mid-term project for data stucture
+mid-term project for data structure
