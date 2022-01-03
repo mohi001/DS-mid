@@ -2,7 +2,7 @@
 void back_to_menu();
 int main(int argc, char const *argv[])
 {
-    std::cout << "welcome";
+    std::cout << "welcome\n";
     std::string input = "";
     std::string exp = "";
     std::string str = "";
@@ -153,7 +153,10 @@ int main(int argc, char const *argv[])
 }
 void back_to_menu()
 {
-    std::cout << "press enter to back to menu";
+    std::cout << "press enter to back to menu...";
     std::getchar();
-    std::system("clear");
+    if (std::system("clear"))
+    {
+        fprintf(stderr, "faild to clear \n");
+    };
 }
