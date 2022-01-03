@@ -35,7 +35,7 @@ public:
     static void show_history_inc(fix_to_fix *fixes)
     {
         fix_to_fix tmp("");
-        for (size_t i = 0; i < 5; i++)
+        for (size_t j = 0; j < 5; j++)
         {
             for (size_t i = 0; i < 5; i++)
             {
@@ -47,7 +47,7 @@ public:
                 }
             }
         }
-        for (size_t i = 0; i < 5; i++)
+        for (size_t j = 0; j < 5; j++)
         {
             for (size_t i = 0; i < 5; i++)
             {
@@ -67,7 +67,7 @@ public:
     static void show_history_dec(fix_to_fix *fixes)
     {
         fix_to_fix tmp("");
-        for (size_t i = 0; i < 5; i++)
+        for (size_t j = 0; j < 5; j++)
         {
             for (size_t i = 0; i < 5; i++)
             {
@@ -79,7 +79,7 @@ public:
                 }
             }
         }
-        for (size_t i = 0; i < 5; i++)
+        for (size_t j = 0; j < 5; j++)
         {
             for (size_t i = 0; i < 5; i++)
             {
