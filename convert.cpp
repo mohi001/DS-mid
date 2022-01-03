@@ -6,7 +6,6 @@ void convert()
     std::string input = "";
     std::string exp = "";
     std::string str = "";
-    bool d = true;
     fix_to_fix in_post("infix to postfix");
     fix_to_fix in_pre("infix to prefix");
     fix_to_fix post_in("postfix to infix");
@@ -15,7 +14,7 @@ void convert()
     fix_to_fix pre_post("prefix to postfix");
     fix_to_fix fixes[6] = {in_post, in_pre,
                            post_in, post_pre, pre_in, pre_post};
-    while (1 && d)
+    while (1)
     {
         std::cout << "please chose a numebr\nor enter q to exit expresion convertor\n";
         std::cout << "1: infix to postfix\n";
@@ -151,7 +150,6 @@ void convert()
             std::cout << "\n";
             break;
         }
-        input = "q";
     }
 }
 static void back_to_menu()

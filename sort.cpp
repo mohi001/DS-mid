@@ -96,10 +96,6 @@ void sort()
         std::cout << "1: bubble sort\n";
         std::cout << "2: selection sort\n";
         std::cout << "3: insertion sort \n";
-        // std::cout << "4: postfix to prefix\n";
-        // std::cout << "5: prefix to infix\n";
-        // std::cout << "6: prefix to postfix\n";
-        // std::cout << "7: show history\n";
         std::getline(std::cin, input);
         if (input == "q" || input == "exit")
         {

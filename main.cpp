@@ -3,8 +3,6 @@ int main(int argc, char const *argv[])
 {
     std::cout << "welcome\n";
     std::string input = "";
-    std::string exp = "";
-    std::string str = "";
     while (1)
     {
         std::cout << "please chose a numebr\nor enter q to exit\n";
