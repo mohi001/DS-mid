@@ -28,7 +28,7 @@ int main(int argc, char const *argv[])
             sort();
             break;
         default:
-            std::cout << "invalid";
+            std::cout << "\033[1;31minvalid \033[0m\n";
             std::cout << "\n";
             break;
         }

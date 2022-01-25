@@ -69,11 +69,13 @@ static void log(Stack &in, Stack &op, Stack &out, bool l)
 }
 static bool is_operator(std::string str)
 {
-    return str == "+" || str == "-" || str == "/" || str == "*" || str == "^";
+    return str == "+" || str == "-" || str == "/" || str == "*" || str == "^" || str == "sin" || str == "cos" || str == "tan" || str == "cot";
 }
 static int prec(std::string c)
 {
-    if (c == "^")
+    if (c == "sin" || c == "cos" || c == "tan" || c == "cot")
+        return 4;
+    else if (c == "^")
         return 3;
     else if (c == "/" || c == "*")
         return 2;

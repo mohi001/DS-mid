@@ -61,7 +61,10 @@ public:
         }
         for (size_t i = 0; i < 6; i++)
         {
-            fixes[i].print();
+            if (fixes[i].count != 0)
+            {
+                fixes[i].print();
+            }
         }
     }
     static void show_history_dec(fix_to_fix *fixes)
@@ -93,7 +96,10 @@ public:
         }
         for (size_t i = 0; i < 6; i++)
         {
-            fixes[i].print();
+            if (fixes[i].count != 0)
+            {
+                fixes[i].print();
+            }
         }
     }
 };
