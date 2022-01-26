@@ -1,7 +1,8 @@
 #include "header.hpp"
 static bool checkparentheses(std::string in);
-static bool is_p(char s);
+static bool is_p(std::string s);
 static bool is_operator(std::string str);
+static Stack solve_minus(Stack in);
 
 bool is_infix(std::string in)
 {
@@ -9,15 +10,21 @@ bool is_infix(std::string in)
     {
         return false;
     }
-    for (auto &i : in)
+    Stack tmp(in);
+    Stack st;
+    std::string t;
+    tmp = solve_minus(tmp);
+    while(!tmp.isEmpty())
     {
-        if (is_p(i))
+        t = tmp.pop();
+        if (!is_p(t))
         {
-            i = ' ';
+            st.push(t);
         }
     }
-    Stack st(in);
-    std::string t = st.pop();
+    st.reverse();
+    
+    t = st.pop();
     if (is_operator(t))
     {
         return false;
@@ -57,13 +64,13 @@ bool is_prefix(std::string pre)
     std::string in = pre_to_in(pre, false);
     return is_infix(in);
 }
-static bool is_p(char s)
+static bool is_p(std::string s)
 {
-    return (s == '(' || s == ')');
+    return (s == "(" || s == ")");
 }
 static bool is_operator(std::string str)
 {
-    return str == "+" || str == "-" || str == "/" || str == "*" || str == "^";
+    return str == "+" || str == "-" || str == "/" || str == "*" || str == "^" || str == "sin" || str == "cos" || str == "tan" || str == "cot";
 }
 static bool checkparentheses(std::string in)
 {
@@ -90,4 +97,32 @@ static bool checkparentheses(std::string in)
         return true;
     }
     return false;
+}
+static Stack solve_minus(Stack in)
+{
+    std::string t;
+    std::string c;
+    Stack out;
+    while (!in.isEmpty())
+    {
+        t = in.pop();
+        if (t == "-")
+        {
+            c = out.peek();
+            if (c == "(" || c == "sin" || c == "cos" || c == "tan" || c == "cot" || out.isEmpty())
+            {
+                out.push(in.pop() + " ?");
+            }
+            else
+            {
+                out.push(t);
+            }
+        }
+        else
+        {
+            out.push(t);
+        }
+    }
+    out.reverse();
+    return out;
 }

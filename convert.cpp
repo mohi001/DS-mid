@@ -40,16 +40,16 @@ void convert()
         {
         case 1:
             std::getline(std::cin, exp);
-            // if (is_infix(exp))
+            if (is_infix(exp))
             {
                 str = in_to_post(exp, true);
                 std::cout << "result is: " << str;
                 std::cout << "\n";
                 fixes[0].update();
             }
-            // else
+            else
             {
-                // std::cout << "\033[1;31minvalid expresion\033[0m\n";
+                std::cout << "\033[1;31minvalid expresion\033[0m\n";
             }
             back_to_menu();
             break;
