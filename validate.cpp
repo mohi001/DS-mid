@@ -11,19 +11,26 @@ bool is_infix(std::string in)
         return false;
     }
     Stack tmp(in);
+    Stack tt;
     Stack st;
     std::string t;
     tmp = solve_minus(tmp);
-    while(!tmp.isEmpty())
+    while (!tmp.isEmpty())
     {
         t = tmp.pop();
         if (!is_p(t))
         {
+            tt.push(t);
+        }
+    }
+    while (!tt.isEmpty())
+    {
+        t = tt.pop();
+        if (!(t == "sin" || t == "cos" || t == "tan" || t == "cot"))
+        {
             st.push(t);
         }
     }
-    st.reverse();
-    
     t = st.pop();
     if (is_operator(t))
     {
