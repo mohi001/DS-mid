@@ -3,6 +3,7 @@
 static bool is_operator(std::string str);
 static bool is_pop_op(std::string input_op, std::string operand_op);
 static void log(Stack &in, Stack &op, Stack &out, bool l);
+static Stack solve_minus(Stack in);
 
 std::string in_to_post(std::string str, bool l)
 {
@@ -11,6 +12,7 @@ std::string in_to_post(std::string str, bool l)
         std::cout << "infix to postfix: " << str << "\n";
     }
     Stack in(str);
+    in = solve_minus(in);
     Stack out;
     Stack operat;
     std::string t;
@@ -83,6 +85,34 @@ static int prec(std::string c)
         return 1;
     else
         return -1;
+}
+static Stack solve_minus(Stack in)
+{
+    std::string t;
+    std::string c;
+    Stack out;
+    while (!in.isEmpty())
+    {
+        t = in.pop();
+        if (t == "-")
+        {
+            c = out.peek();
+            if (c == "(" || c == "sin" || c == "cos" || c == "tan" || c == "cot" || out.isEmpty())
+            {
+                out.push(in.pop() + " ?");
+            }
+            else
+            {
+                out.push(t);
+            }
+        }
+        else
+        {
+            out.push(t);
+        }
+    }
+    out.reverse();
+    return out;
 }
 static bool is_pop_op(std::string input_op, std::string operand_op)
 {
